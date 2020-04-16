@@ -14,7 +14,7 @@ while(2 > i){
     console.log('   |[9] Encerrar votação|');
     console.log('   ----------------------\n');
     let choice = readline.questionInt('   Digite: ')
-    i = funcionalidades.terminarWhile(choice)
+    i = funcionalidades.terminarWhile(choice) 
     console.log('\n');
     dados.candidatos = funcionalidades.armazenar(choice, dados.candidatos)
     funcionalidades.substituirNoArquivo(dados)

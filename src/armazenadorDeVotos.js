@@ -5,7 +5,12 @@ function armazenar(candidateIndex, candidateArray) {
     if(candidateIndex === 1) candidateArray[candidateIndex - 1].votos += 1
     if(candidateIndex === 2) candidateArray[candidateIndex - 1].votos += 1
     if(candidateIndex === 3) candidateArray[candidateIndex - 1].votos += 1
-    if(candidateIndex !== 1 && candidateIndex !== 2 && candidateIndex !== 3 && candidateIndex !== 9) console.log('Número inválido');
+    if(candidateIndex !== 1 && candidateIndex !== 2 && candidateIndex !== 3 && candidateIndex !== 9){
+        console.log('   ================\n');
+        console.log('   Número inválido\n');
+        console.log('   ================\n');
+    }
+    
     return candidateArray
 }
 
