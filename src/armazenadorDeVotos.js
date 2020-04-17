@@ -3,15 +3,14 @@ let dados = require('./dados.json')
 
 // Verifica qual candidato foi escolhido, adiciona mais 1 voto e retorna o array modificado
 function armazenar(candidateIndex, candidateArray) { 
-    if(candidateIndex === 1) candidateArray[candidateIndex - 1].votos += 1
-    if(candidateIndex === 2) candidateArray[candidateIndex - 1].votos += 1
-    if(candidateIndex === 3) candidateArray[candidateIndex - 1].votos += 1
-    if(candidateIndex !== 1 && candidateIndex !== 2 && candidateIndex !== 3 && candidateIndex !== 9){
+    const result = candidateIndex === 1 || candidateIndex === 2 || candidateIndex === 3
+        if (result) {
+            candidateArray[candidateIndex - 1].votos += 1
+            return candidateArray
+        }
         console.log('   ================\n');
         console.log('   Número inválido\n');
         console.log('   ================\n');
-    }
-    
     return candidateArray
 }
 
@@ -29,7 +28,11 @@ function substituirNoArquivo(dados) {
 
 // Verifica qual candidato tem mais votos e retorna o vencedor
 function verificarVencedor(candidatesArray) {
-    return candidatesArray[0].votos > candidatesArray[1].votos ? candidatesArray[0] : candidatesArray[1]
+    const vencedor = candidatesArray[0].votos > candidatesArray[1].votos ? candidatesArray[0] : candidatesArray[1]
+    if (candidatesArray[0].votos === candidatesArray[1].votos) {
+        return 'A votação empatou, portanto comece uma nova votação\n'
+    }
+    return `O vencedor é ${vencedor.nome} com ${vencedor.votos} votos\n`
 }
 
 // Zera a quantidade de votos dos candidatos e armazena no arquivo

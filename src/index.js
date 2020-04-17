@@ -6,7 +6,7 @@ console.log('~~~~~~VOTAÇÃO INICIADA~~~~~~\n');
 
 let i = 0
 while(2 > i){
-    funcionalidades.imprimirMenu() // imprime menu
+    funcionalidades.imprimirMenu() // imprime menu 
 
     let choice = readline.questionInt('   Digite: ') // Recebe dados do teclado
 
@@ -19,7 +19,7 @@ while(2 > i){
 }
 const vencedor = funcionalidades.verificarVencedor(dados.candidatos) // Armazena o vencedor numa constante
 
-console.log(`O vencedor é ${vencedor.nome} com ${vencedor.votos}\n`);// Mostra quem venceu e a quantidade de votos
+console.log(vencedor);// Mostra quem venceu e a quantidade de votos
 
 funcionalidades.zerarVotos(dados)// Zera a quantidade de votos de todos os candidatos
 
